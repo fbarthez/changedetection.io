@@ -11,8 +11,8 @@ services:
 #      - LISTEN_HOST=::
       - LISTEN_HOST=0.0.0.0
       - BASE_URL=https://cd.dokploy.dota.com
-#    ports:
-#      - 5000
+    ports:
+      - 5000
     restart: unless-stopped
     depends_on:
       browser-sockpuppet-chrome:
