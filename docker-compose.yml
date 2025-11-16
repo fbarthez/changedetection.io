@@ -1,4 +1,4 @@
---- 
+---
 services:
   changedetection:
     image: ghcr.io/dgtlmoon/changedetection.io
@@ -16,6 +16,9 @@ services:
     depends_on:
       browser-sockpuppet-chrome:
         condition: service_started
+    networks:
+      - changedetection-net
+
   browser-sockpuppet-chrome:
     hostname: browser-sockpuppet-chrome
     image: docker.io/dgtlmoon/sockpuppetbrowser:latest
@@ -27,3 +30,9 @@ services:
       - SCREEN_HEIGHT=1024
       - SCREEN_DEPTH=16
       - MAX_CONCURRENT_CHROME_PROCESSES=10
+    networks:
+      - changedetection-net
+
+networks:
+  changedetection-net:
+    driver: bridge
