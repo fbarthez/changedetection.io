@@ -9,6 +9,7 @@ services:
     environment:
       - PLAYWRIGHT_DRIVER_URL=ws://browser-sockpuppet-chrome:3000
       - BASE_URL=https://cd.dokploy.dota.com
+      - USE_X_SETTINGS=1
     ports:
       - "5000:5000"
     restart: unless-stopped
